@@ -1,0 +1,610 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+
+  <defs>
+
+    <!-- BACKGROUND -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="420">
+      <stop offset="0%" stop-color="#02040a"/>
+      <stop offset="38%" stop-color="#061827"/>
+      <stop offset="68%" stop-color="#11102e"/>
+      <stop offset="100%" stop-color="#02030a"/>
+    </linearGradient>
+
+    <!-- CYAN GLOW -->
+    <radialGradient id="cyanGlow">
+      <stop offset="0%" stop-color="#00f7ff" stop-opacity=".30"/>
+      <stop offset="45%" stop-color="#00f7ff" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#00f7ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- PURPLE GLOW -->
+    <radialGradient id="purpleGlow">
+      <stop offset="0%" stop-color="#8a2be2" stop-opacity=".28"/>
+      <stop offset="45%" stop-color="#8a2be2" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#8a2be2" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- LINE GRADIENT -->
+    <linearGradient id="lineGradient">
+      <stop offset="0%" stop-color="#00f7ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00f7ff"/>
+      <stop offset="100%" stop-color="#8a2be2" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- SCANLINE -->
+    <linearGradient id="scan">
+      <stop offset="0%" stop-color="#00f7ff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#00f7ff" stop-opacity=".15"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity=".8"/>
+      <stop offset="55%" stop-color="#00f7ff" stop-opacity=".15"/>
+      <stop offset="100%" stop-color="#00f7ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- GLOW FILTER -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+    <!-- CLIP -->
+    <clipPath id="clip">
+      <rect width="1200" height="420" rx="18"/>
+    </clipPath>
+
+  </defs>
+
+
+  <!-- ===================================================== -->
+  <!-- BACKGROUND -->
+  <!-- ===================================================== -->
+
+  <rect
+    width="1200"
+    height="420"
+    rx="18"
+    fill="url(#bg)"
+  />
+
+  <!-- CYAN LIGHT -->
+  <ellipse
+    cx="180"
+    cy="100"
+    rx="430"
+    ry="260"
+    fill="url(#cyanGlow)"
+  >
+    <animate
+      attributeName="opacity"
+      values=".45;.8;.45"
+      dur="5s"
+      repeatCount="indefinite"
+    />
+  </ellipse>
+
+  <!-- PURPLE LIGHT -->
+  <ellipse
+    cx="1050"
+    cy="320"
+    rx="430"
+    ry="260"
+    fill="url(#purpleGlow)"
+  >
+    <animate
+      attributeName="opacity"
+      values=".35;.75;.35"
+      dur="6s"
+      repeatCount="indefinite"
+    />
+  </ellipse>
+
+
+  <!-- ===================================================== -->
+  <!-- CYBER GRID -->
+  <!-- ===================================================== -->
+
+  <g
+    stroke="#00f7ff"
+    stroke-width="1"
+    opacity=".08"
+  >
+
+    <path d="M0 60H1200"/>
+    <path d="M0 120H1200"/>
+    <path d="M0 180H1200"/>
+    <path d="M0 240H1200"/>
+    <path d="M0 300H1200"/>
+    <path d="M0 360H1200"/>
+
+    <path d="M100 0V420"/>
+    <path d="M200 0V420"/>
+    <path d="M300 0V420"/>
+    <path d="M400 0V420"/>
+    <path d="M500 0V420"/>
+    <path d="M600 0V420"/>
+    <path d="M700 0V420"/>
+    <path d="M800 0V420"/>
+    <path d="M900 0V420"/>
+    <path d="M1000 0V420"/>
+    <path d="M1100 0V420"/>
+
+  </g>
+
+
+  <!-- ===================================================== -->
+  <!-- TOP HUD -->
+  <!-- ===================================================== -->
+
+  <g
+    font-family="monospace"
+    font-size="12"
+    fill="#00f7ff"
+  >
+
+    <text x="42" y="35">
+      LUCAS_OS // CORE
+    </text>
+
+    <text x="1035" y="35">
+      v2.026
+    </text>
+
+  </g>
+
+
+  <!-- TOP STATUS -->
+
+  <circle
+    cx="1015"
+    cy="31"
+    r="4"
+    fill="#00ff88"
+  >
+    <animate
+      attributeName="opacity"
+      values="1;.25;1"
+      dur="1.5s"
+      repeatCount="indefinite"
+    />
+  </circle>
+
+  <text
+    x="1025"
+    y="35"
+    font-family="monospace"
+    font-size="11"
+    fill="#00ff88"
+  >
+    ONLINE
+  </text>
+
+
+  <!-- ===================================================== -->
+  <!-- CORNER HUD -->
+  <!-- ===================================================== -->
+
+  <g
+    fill="none"
+    stroke="#00f7ff"
+    stroke-width="2"
+  >
+
+    <path d="M35 70H160"/>
+    <path d="M35 70V105"/>
+
+    <path d="M1165 70H1040"/>
+    <path d="M1165 70V105"/>
+
+    <path d="M35 350H160"/>
+    <path d="M35 350V315"/>
+
+    <path d="M1165 350H1040"/>
+    <path d="M1165 350V315"/>
+
+  </g>
+
+
+  <!-- ===================================================== -->
+  <!-- CIRCUIT LINES -->
+  <!-- ===================================================== -->
+
+  <g
+    fill="none"
+    stroke="#00f7ff"
+    stroke-width="1.5"
+    opacity=".5"
+  >
+
+    <path d="M35 140H110V120H190"/>
+    <path d="M35 170H90V185H170"/>
+
+    <path d="M1165 140H1090V120H1010"/>
+    <path d="M1165 170H1110V185H1030"/>
+
+    <path d="M35 260H120V280H200"/>
+    <path d="M1165 260H1080V280H1000"/>
+
+  </g>
+
+
+  <!-- MOVING CIRCUIT DOTS -->
+
+  <g fill="#00f7ff" filter="url(#glow)">
+
+    <circle r="3">
+
+      <animateMotion
+        path="M35 140H110V120H190"
+        dur="3s"
+        repeatCount="indefinite"
+      />
+
+    </circle>
+
+    <circle r="3">
+
+      <animateMotion
+        path="M1165 170H1110V185H1030"
+        dur="4s"
+        repeatCount="indefinite"
+      />
+
+    </circle>
+
+  </g>
+
+
+  <!-- ===================================================== -->
+  <!-- CENTRAL AI CORE -->
+  <!-- ===================================================== -->
+
+  <!-- OUTER RING -->
+
+  <circle
+    cx="600"
+    cy="155"
+    r="105"
+    fill="none"
+    stroke="#00f7ff"
+    stroke-width="1"
+    stroke-opacity=".15"
+  />
+
+  <!-- ROTATING RING -->
+
+  <circle
+    cx="600"
+    cy="155"
+    r="90"
+    fill="none"
+    stroke="#00f7ff"
+    stroke-width="1.5"
+    stroke-dasharray="12 10"
+    opacity=".6"
+  >
+
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 600 155"
+      to="360 600 155"
+      dur="12s"
+      repeatCount="indefinite"
+    />
+
+  </circle>
+
+
+  <!-- SECOND ROTATING RING -->
+
+  <circle
+    cx="600"
+    cy="155"
+    r="75"
+    fill="none"
+    stroke="#8a2be2"
+    stroke-width="1"
+    stroke-dasharray="5 14"
+    opacity=".7"
+  >
+
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="360 600 155"
+      to="0 600 155"
+      dur="9s"
+      repeatCount="indefinite"
+    />
+
+  </circle>
+
+
+  <!-- CORE GLOW -->
+
+  <circle
+    cx="600"
+    cy="155"
+    r="35"
+    fill="#00f7ff"
+    opacity=".08"
+    filter="url(#softGlow)"
+  >
+
+    <animate
+      attributeName="r"
+      values="30;45;30"
+      dur="3s"
+      repeatCount="indefinite"
+    />
+
+  </circle>
+
+
+  <!-- CORE -->
+
+  <circle
+    cx="600"
+    cy="155"
+    r="8"
+    fill="#00f7ff"
+    filter="url(#glow)"
+  >
+
+    <animate
+      attributeName="r"
+      values="7;11;7"
+      dur="2s"
+      repeatCount="indefinite"
+    />
+
+  </circle>
+
+
+  <!-- CORE CROSSHAIR -->
+
+  <g
+    stroke="#00f7ff"
+    stroke-width="1"
+    opacity=".7"
+  >
+
+    <path d="M600 55V80"/>
+    <path d="M600 230V255"/>
+    <path d="M500 155H525"/>
+    <path d="M675 155H700"/>
+
+  </g>
+
+
+  <!-- ===================================================== -->
+  <!-- MAIN NAME -->
+  <!-- ===================================================== -->
+
+  <text
+    x="600"
+    y="155"
+    text-anchor="middle"
+    font-family="monospace"
+    font-size="48"
+    font-weight="bold"
+    letter-spacing="5"
+    fill="#ffffff"
+  >
+    LUCAS CORTES
+  </text>
+
+
+  <!-- ===================================================== -->
+  <!-- SUBTITLE -->
+  <!-- ===================================================== -->
+
+  <text
+    x="600"
+    y="190"
+    text-anchor="middle"
+    font-family="monospace"
+    font-size="15"
+    letter-spacing="3"
+    fill="#00f7ff"
+  >
+    AI • IoT • AUTOMATION • SOFTWARE
+  </text>
+
+
+  <!-- ===================================================== -->
+  <!-- SYSTEM STATUS -->
+  <!-- ===================================================== -->
+
+  <rect
+    x="425"
+    y="215"
+    width="350"
+    height="34"
+    rx="5"
+    fill="#020409"
+    fill-opacity=".75"
+    stroke="#00f7ff"
+    stroke-opacity=".5"
+  />
+
+  <circle
+    cx="448"
+    cy="232"
+    r="5"
+    fill="#00ff88"
+  >
+
+    <animate
+      attributeName="opacity"
+      values="1;.2;1"
+      dur="1.2s"
+      repeatCount="indefinite"
+    />
+
+  </circle>
+
+  <text
+    x="465"
+    y="237"
+    font-family="monospace"
+    font-size="12"
+    fill="#ffffff"
+  >
+    SYSTEM ONLINE // BUILDING THE FUTURE
+  </text>
+
+
+  <!-- ===================================================== -->
+  <!-- BOOT PROGRESS -->
+  <!-- ===================================================== -->
+
+  <text
+    x="425"
+    y="270"
+    font-family="monospace"
+    font-size="10"
+    fill="#8a2be2"
+  >
+    AI CORE INITIALIZATION
+  </text>
+
+  <rect
+    x="425"
+    y="278"
+    width="350"
+    height="4"
+    rx="2"
+    fill="#10131c"
+  />
+
+  <rect
+    x="425"
+    y="278"
+    width="350"
+    height="4"
+    rx="2"
+    fill="url(#lineGradient)"
+  >
+
+    <animate
+      attributeName="width"
+      values="40;300;350;250;350"
+      dur="5s"
+      repeatCount="indefinite"
+    />
+
+  </rect>
+
+
+  <!-- ===================================================== -->
+  <!-- SCANLINE -->
+  <!-- ===================================================== -->
+
+  <rect
+    x="-300"
+    y="0"
+    width="300"
+    height="420"
+    fill="url(#scan)"
+    opacity=".35"
+    clip-path="url(#clip)"
+  >
+
+    <animate
+      attributeName="x"
+      from="-300"
+      to="1200"
+      dur="5s"
+      repeatCount="indefinite"
+    />
+
+  </rect>
+
+
+  <!-- ===================================================== -->
+  <!-- LOWER INFORMATION -->
+  <!-- ===================================================== -->
+
+  <line
+    x1="150"
+    y1="320"
+    x2="1050"
+    y2="320"
+    stroke="url(#lineGradient)"
+    stroke-width="2"
+  />
+
+
+  <g
+    font-family="monospace"
+    font-size="11"
+  >
+
+    <text
+      x="150"
+      y="345"
+      fill="#00f7ff"
+    >
+      AI_CORE: ACTIVE
+    </text>
+
+    <text
+      x="500"
+      y="345"
+      fill="#8a2be2"
+    >
+      ORCHESTRATOR: READY
+    </text>
+
+    <text
+      x="900"
+      y="345"
+      fill="#00ff88"
+    >
+      BUILD: 2026
+    </text>
+
+  </g>
+
+
+  <!-- ===================================================== -->
+  <!-- BOTTOM MESSAGE -->
+  <!-- ===================================================== -->
+
+  <text
+    x="600"
+    y="385"
+    text-anchor="middle"
+    font-family="monospace"
+    font-size="11"
+    letter-spacing="4"
+    fill="#ffffff"
+    opacity=".5"
+  >
+    INITIALIZING THE FUTURE
+  </text>
+
+
+  <!-- ===================================================== -->
+  <!-- BORDER -->
+  <!-- ===================================================== -->
+
+  <rect
+    x="1"
+    y="1"
+    width="1198"
+    height="418"
+    rx="18"
+    fill="none"
+    stroke="#00f7ff"
+    stroke-opacity=".25"
+  />
+
+</svg>
